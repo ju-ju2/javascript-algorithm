@@ -1,0 +1,37 @@
+<!-- N개의 문자열이 입력되면 중복된 문자열은 제거하고 출력하는 프로그램을 작성하세요.
+출력하는 문자열은 원래의 입력순서를 유지합니다. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>중복단어제거</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        // 1.
+        // let myArr = [];
+        // for (x of arr) {
+        //   if (!myArr.includes(x)) {
+        //     myArr.push(x);
+        //   }
+        // }
+        // return myArr;
+
+        // 2.
+        // let answer = arr.filter((value, index) => arr.indexOf(value) === index);
+        // return answer;
+
+        //3.
+        let answer = arr.reduce(
+          (sum, value) => (sum.includes(value) ? sum : [...sum, value]),
+          []
+        );
+        return answer;
+      }
+      let arr = ["good", "time", "good", "time", "student"];
+      console.log(solution(arr));
+    </script>
+    <h1 style="color: red;"></h1>
+  </body>
+</html>

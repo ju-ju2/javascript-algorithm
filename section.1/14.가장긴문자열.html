@@ -1,0 +1,25 @@
+<!-- 대문자와 소문자가 같이 존재하는 문자열을 입력받아 대문자는 소문자로 소문자는 대문자로
+변환하여 출력하는 프로그램을 작성하세요. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>가장긴문자열</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let max = "";
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].length > max.length) {
+            max = arr[i];
+          }
+        }
+
+        return max;
+      }
+      let myArr = ["teacher", "time", "student", "beautiful", "good"];
+      console.log(solution(myArr));
+    </script>
+  </body>
+</html>

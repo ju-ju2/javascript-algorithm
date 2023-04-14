@@ -1,0 +1,51 @@
+<!-- 소문자로 된 한개의 문자열이 입력되면 중복된 문자를 제거하고 출력하는 프로그램을 작성하
+세요.
+제거된 문자열의 각 문자는 원래 문자열의 순서를 유지합니다. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>중복문자제거</title>
+  </head>
+  <body>
+    <script>
+      // 1. Set() - 객체를 반환하기 떄문에 스프레드 연산자 필요
+      // function solution(str) {
+      //   let answer = [...new Set(str)];
+
+      //   return answer.join("");
+      // }
+
+      // 2. filter() + indexOf()
+      function solution(str) {
+        let arr = [...str];
+        let answer = arr.filter((item, index) => arr.indexOf(item) === index);
+        return answer.join("");
+      }
+
+      // 3. reduce() includes()
+      // function solution(str) {
+      //   let answer;
+      //   let arr = [...str];
+      //   answer = arr.reduce((sum, value) =>
+      //     sum.includes(value) ? sum : [...sum, value]
+      //   );
+
+      //   return answer.join("");
+      // }
+
+      // 4. for, includes()
+      // function solution(str) {
+      //   let arr = [...str];
+      //   let myArr = [];
+      //   for (x of arr) {
+      //     if (!myArr.includes(x)) {
+      //       myArr.push(x);
+      //     }
+      //   }
+      //   return myArr;
+      // }
+      console.log(solution("ksekkset"));
+    </script>
+  </body>
+</html>
