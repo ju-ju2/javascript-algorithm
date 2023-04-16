@@ -1,0 +1,38 @@
+<!-- 문제
+한 개의 문자열 s와 문자 t가 주어지면 문자열 s의 각 문자가 문자 t와 떨어진 최소거리를 출
+력하는 프로그램을 작성하세요. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>가장짧은문자거리</title>
+  </head>
+  <body>
+    <script>
+      function solution(str, t) {
+        let answer = "";
+        let p = 1000;
+        index = [];
+        for (let x of str) {
+          if (x === "e") {
+            p = 0;
+          } else {
+            p++;
+          }
+          index.push(p);
+        }
+        for (let i = str.length - 1; i >= 0; i--) {
+          if (str[i] === "e") {
+            p = 0;
+          } else {
+            p++;
+            index[i] = Math.min(index[i], p);
+          }
+        }
+        console.log(index);
+        // return parseInt(answer);
+      }
+      console.log(solution("teachermode", "e"));
+    </script>
+  </body>
+</html>
