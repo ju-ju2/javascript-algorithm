@@ -1,0 +1,30 @@
+<!-- 문제
+괄호가 입력되면 올바른 괄호이면 “YES", 올바르지 않으면 ”NO"를 출력합니다.
+(())() 이것은 괄호의 쌍이 올바르게 위치하는 거지만, (()()))은 올바른 괄호가 아니다. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>올바른괄호</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "yes";
+        let myArr = [];
+        if (str.length % 2 !== 0 || str[0] === ")") return "no";
+        for (let x of str) {
+          if (x === "(") {
+            myArr.push(x);
+          } else {
+            if (myArr.length === 0) return "no";
+            myArr.pop();
+          }
+        }
+        return answer;
+      }
+      console.log(solution("(()(()))(()"));
+      console.log(solution("(()())"));
+    </script>
+  </body>
+</html>
