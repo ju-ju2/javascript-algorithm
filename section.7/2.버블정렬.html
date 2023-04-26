@@ -1,0 +1,30 @@
+<!-- 문제
+ N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프로그램을 작성하세요.
+정렬하는 방법은 버블정렬입니다. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>버블정렬</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let myArr = [...arr];
+        let before;
+        for (let x of myArr) {
+          for (let i = 0; i < myArr.length; i++) {
+            if (myArr[i] > myArr[i + 1]) {
+              [myArr[i], myArr[i + 1]] = [myArr[i + 1], myArr[i]];
+            }
+          }
+        }
+        return myArr;
+      }
+      let arr = [13, 5, 11, 7, 23, 15];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
+
+<!-- 최적화 필요. -->

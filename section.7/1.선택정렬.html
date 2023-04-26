@@ -1,0 +1,30 @@
+<!-- 문제
+ N개이 숫자가 입력되면 오름차순으로 정렬하여 출력하는 프로그램을 작성하세요.
+정렬하는 방법은 선택정렬입니다. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>선택정렬</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        // let temp;
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+              //   temp = arr[i];
+              //   arr[i] = arr[j];
+              //   arr[j] = temp;
+              [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+          }
+        }
+        return arr;
+      }
+      let arr = [13, 5, 11, 7, 23, 15];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

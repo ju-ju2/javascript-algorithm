@@ -1,0 +1,41 @@
+<!-- 문제
+ N개의 정수가 입력되면 당신은 입력된 값을 정렬해야 한다.
+음의 정수는 앞쪽에 양의정수는 뒷쪽에 있어야 한다. 또한 양의정수와 음의정수의 순서에는
+변함이 없어야 한다. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>specialSort</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        // let answer;
+        // let minus = [];
+        // let plus = [];
+        // for (let i = 0; i < arr.length; i++) {
+        //   if (arr[i] > 0) {
+        //     console.log(true);
+        //     plus.push(arr[i]);
+        //   } else {
+        //     minus.push(arr[i]);
+        //   }
+        // }
+        // answer = [...minus, ...plus];
+        // return answer;
+        let myArr = [...arr];
+        for (let i = 0; i < myArr.length - 1; i++) {
+          for (let j = 0; j < myArr.length - i - 1; j++) {
+            if (myArr[j] > 0 && myArr[j + 1] < 0) {
+              [myArr[j], myArr[j + 1]] = [myArr[j + 1], myArr[j]];
+            }
+          }
+        }
+        return myArr;
+      }
+      let arr = [1, 2, 3, -3, -2, 5, 6, -6];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
